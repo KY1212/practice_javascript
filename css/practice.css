@@ -1,0 +1,267 @@
+/*global*/
+* {
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a {
+  color: #fff;
+}
+
+.wrapper {
+  width: 96%;
+  margin: auto;
+}
+
+.squareBtn {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.bgBlue.squareBtn {
+  background-color: #75A9FF	;
+}
+
+.bgWhite.squareBtn {
+  background-color: #fff;
+}
+
+.txtWhite {
+  color: #fff;
+}
+
+.txtBrown {
+  color: #D2B48C;
+}
+
+.largeTxt {
+  font-size: 50px;
+}
+
+.mediumTxt {
+  font-size: 34px;
+}
+
+body {
+  color: #333;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #FAF0E6	;
+}
+
+/*header*/
+header {
+  width: 100%;
+  background-color: #D2B48C	;
+  
+}
+
+header .wrapper {
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+header ul li+li {
+  margin-left: 30px;
+}
+
+header .menu {
+  display: none;
+}
+
+header .mypage {
+  display: none;
+}
+
+/*1000px以下で適用*/
+@media (max-width: 1000px) {
+
+  header .wrapper {
+    justify-content: space-between;
+  }
+  
+  header ul {
+    display: none;
+  }
+
+  header .menu {
+    display: block;
+    width: 80px;
+
+  }
+  header .fas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+  }
+
+  header .mypage {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+
+}
+
+
+/*heroイメージ*/
+.hero {
+  background-image: url(../img/audience.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.hero .wrapper {
+  height: auto;
+  color: #fff;
+  text-align: center;
+  padding: 50px 0 50px;
+}
+
+.hero .wrapper p {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.hero .squareBtn {
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 17px 0;
+}
+
+/*768px以下で適用*/
+@media (max-width: 768px) {
+
+  .hero .wrapper .largeTxt {
+    font-size: 40px;
+  }
+  .hero .wrapper .mediumTxt {
+    font-size: 30px;
+  }
+
+}
+
+/*425px以下で適用*/
+@media (max-width: 425px) {
+
+  .hero .wrapper .largeTxt {
+    font-size: 34px;
+  }
+  .hero .wrapper .mediumTxt {
+    font-size: 26px;
+  }
+
+}
+
+/*main*/
+main.wrapper {
+  padding: 50px 0;
+  max-width: 800px;
+  margin: auto;
+}
+
+
+.tabNav ul{
+  display: flex;
+  margin: auto;
+}
+
+.tabNav li {
+  border-radius: 5px 5px 0 0;
+  width: 200px;
+  height: 40px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 40px;
+  border: solid 1px #CD5C5C	;
+}
+
+.tabNav li a {
+  color: #CD5C5C;
+  display: block;
+}
+
+
+.tabNav li + li {
+  margin-left: 4px;
+}
+
+.tabNav li a:hover,
+.tabNav li:hover,
+.tabNav li a.active,
+.tabNav li.active {
+  color: #fff;
+  background-color: #CD5C5C	;
+}
+
+.tabs {
+  height: 600px;
+  background-color: #fff;
+  position: relative;
+  margin-top: -1px;
+  border-top: solid 5px #CD5C5C	;
+}
+.tab {
+  position: absolute;
+  width: 100%;
+
+}
+.tab.active {
+  z-index: 9999;
+}
+main .tab+.tab{
+  display: none;
+}
+
+main .tab .joinTab a{
+  color: #D2B48C;
+}
+
+/* タブ内タブ */
+main .genreNav ul {
+  width: 96%;
+  margin: auto;
+  padding-top: 30px;
+  display: flex;
+  border-bottom: solid 2px #eee;
+}
+
+main .genreNav ul>li {
+  border-bottom: none;
+  width: 110px;
+  text-align: center;
+}
+
+main .genreNav ul>li+li {
+}
+
+main .genreNav ul>li.active {
+  border-bottom: solid 5px #D2B48C;
+}
+
+main .genreTab {
+  position: absolute;
+}
+
+main .genreTab+.genreTab {
+  display: none;
+}
