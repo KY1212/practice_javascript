@@ -40,7 +40,7 @@ $(function () {
   });
 
   $(document).ready(function () {
-    $.getJSON("sample_data.json", function(data){
+    $.getJSON("data/sample_data.json", function(data){
         for(var i in data){
             $(".genreTab").append("<div>" + data[i].animal + "（" + data[i].type + "）</div>");
         }
