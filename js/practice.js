@@ -1,7 +1,7 @@
 $(function () {
 
   $(".wrapper").each(function (){
-    //タブの処理
+    //メインタブの処理
     var $tabNav = $(this).find(".tabNav"),
     $tabAnchors = $tabNav.find("a"),
     $tabPanel = $(this).find(".tab"),
@@ -23,6 +23,7 @@ $(function () {
       $($this.attr("href")).show();
     });
 
+    //ジャンルのタブ
     $genreNav.find("li").click(function(){
       event.preventDefault();
       var $this = $(this);
@@ -37,6 +38,14 @@ $(function () {
     });
 
   });
+
+  $(document).ready(function () {
+    $.getJSON("sample_data.json", function(data){
+        for(var i in data){
+            $(".genreTab").append("<div>" + data[i].animal + "（" + data[i].type + "）</div>");
+        }
+    });
+});
 
 });
 
