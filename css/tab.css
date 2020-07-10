@@ -1,15 +1,14 @@
+@charset "utf-8";
+
 /*=====blobal=====*/
 * {
   color: #333;
+  background-color: #fff9f4;
 }
 
-ul{
-  display: flex;
-  justify-content: center;
-}
+body {
+  height: 1000px;
 
-li:first-child{
-  margin-left: 60px;
 }
 
 a { 
@@ -17,45 +16,62 @@ a {
   text-decoration: none;
 }
 
-/*=====header=====*/
-header {
-  width: 100%;
-  line-height: 100px;
+/*=====tabWrap=====*/
+.tabWrap {
+  height: 560px;
+  padding: 202px 0 262px 0;
+  line-height: 65px;
+  width: 96%;
+  margin: auto;
+}
+
+/*=====tabNav=====*/
+.tabWrap ul {
   display: flex;
   justify-content: center;
 }
 
-.top {
-  background-color: rgb(225, 238, 240);
+.tabNav li {
+  width: 200px;
 }
 
-header .topTitle>h1{
-  font-size: 37px;
+.tabNav li + li {
+  margin-left: 24px;
+}
+
+.tabWrap .tabNav a:hover,
+.tabWrap .tabNav a.active {
+  background-color: #d8d8d8;
+  color: #fff;
+}
+
+.tabWrap .tabNav a:hover {
+  opacity: 0.8;
 }
 
 .tabNav a {
   display: block;
-  padding: 0 1.36em;
-  position: relative;
-}
-
-.tabWrapper .tabNav a:hover,
-.tabWrapper .tabNav a.active {
-  background-color: rgb(95, 92, 92);
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  background-color: #3fa6b4;
   color: #fff;
 }
 
-/*=====contents=====*/
-.contents {
-  position: relative;
-  height: 500px;
+/*=====tabPanel=====*/
+.tabPanel {
+  display: flex;
+  justify-content: center;
 }
 
-.contents .tab>img {
-  position: absolute;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  object-fit: cover;
+.tabPanel .tab {
+  border-top: solid 10px #d8d8d8;
+  background-color: #fff;
+  height: 490px;
+  width: 648px;
+  padding: 24px 16px;
+}
 
+.tabPanel .tab p {
+  background-color: #fff;
+  line-height: 20px;
 }

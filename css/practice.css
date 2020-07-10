@@ -176,6 +176,7 @@ header .mypage {
 main.wrapper {
   padding: 50px 0;
   max-width: 1100px;
+  height: auto;
   margin: auto;
 }
 
@@ -214,7 +215,7 @@ main.wrapper {
 }
 
 .tabs {
-  height: 600px;
+  height: 900px;
   background-color: #fff;
   position: relative;
   margin-top: -1px;
@@ -258,10 +259,122 @@ main .genreNav ul>li.active {
   border-bottom: solid 5px #D2B48C;
 }
 
-main .genreTab {
-  position: absolute;
+main .genreTabs {
+  width: 100%;
+  height: auto;
+}
+
+main .recruitingWrap {
+  width: 100%;
+}
+
+.genreTab .wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
 }
 
 main .genreTab+.genreTab {
   display: none;
 }
+
+.genreTab .recruiting {
+  height: 80px;
+  color: #333;
+  background-color: #eee;
+  padding: 10px;
+}
+
+.genreTab .recruiting+.recruiting {
+  margin-top: 10px;
+}
+
+.genreTab .station {
+  height: 25px;
+  width: 80px;
+  background-color: #fff;
+  color: #75A9FF;
+  border: solid 2px #75A9FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.genreTab .date {
+  font-size: 20px;
+  color: #333;
+}
+
+.genreTab .station_date {
+  display: flex;
+  justify-content: space-between;
+}
+
+.genreTab .conditions {
+  margin-top: 10px;
+  display: flex;
+}
+
+.genreTab .role {
+  font-size: 20px;
+}
+
+.genreTab .age {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+main .calendar {
+  width: 370px;
+  height: 400px;
+  background-color: #D2B48C;
+  margin-left: 20px;
+  padding: 20px 10px;
+}
+
+main .calendar .calendarTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+main .calendar .calendarTop span:first-child {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+main .calendar .date {
+  background-color: #fff;
+  height: 280px;
+  margin-top: 20px;
+  padding: 20px 0;
+}
+
+.calendar-title {
+  text-align: center;
+}
+
+.calendar-table {
+  margin: 20px auto;
+}
+
+.is-today {
+  color: red;
+}
+
+caption, th{
+  text-align: center;
+}
+
+td {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
