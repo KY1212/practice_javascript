@@ -36,7 +36,6 @@ $(function () {
       $genrePanel.hide();
       $($this.find("a").attr("href")).show();
     });
-
   });
 
   $(document).ready(function () {
@@ -44,6 +43,7 @@ $(function () {
         for(var i in data){
           console.log(i);
           var recruiting=$("<div class=\"recruiting\"></div>");
+
           recruiting.append("<p class=\"station\">"+data[i].station+"</p>");
           recruiting.append("<p class=\"date\">"+data[i].date+"</p>");
 
@@ -54,8 +54,6 @@ $(function () {
 
           $('.recruiting>.station, .recruiting>.date').wrapAll("<div class=\"station_date\"></div>");
           $('.recruiting>span').wrapAll("<p class=\"conditions\"></p>");
-
-
         }
     });
 });
@@ -107,41 +105,31 @@ $(function () {
       }
       $tbody.html(tableBody);
 
-
-      
       $("#js-calendar-body").on("click",function(event){
         $(".recruiting").show();
-
         $(document).ready(function () {
           $.getJSON("data/sample_data.json", function(data){
-        
-        // $(this).css("cursor","pointer");
-
-        console.log(getMonth + "月" + event.target.id + "日");
-        //data[i].date
-        selectDate = `${year}/${getMonth}/${event.target.id}`;
-        console.log(selectDate);
-        console.log(event.target.id);
-
-        for(var i in data){
-          if(selectDate!=data[i].date){
-            $(`.recruiting:nth(${i})`).hide();
-          }else{
-            continue;
-          }
-        }
+            // $(this).css("cursor","pointer");
+            console.log(getMonth + "月" + event.target.id + "日");
+            //data[i].date
+            selectDate = `${year}/${getMonth}/${event.target.id}`;
+            console.log(selectDate);
+            console.log(event.target.id);
+            for(var i in data){
+              if(selectDate!=data[i].date){
+                $(`.recruiting:nth(${i})`).hide();
+              }else{
+                continue;
+              }
+            }
+          });
+        });
       });
-    });
-  });
-    
     }
 
     function calendarHeading(year, month){
       $year.text(year);
       $month.text(month + 1);
     }
-
-
-
 });
 

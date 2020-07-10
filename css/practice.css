@@ -118,9 +118,7 @@ header .mypage {
     flex-direction: column;
   }
 
-
 }
-
 
 /*heroイメージ*/
 .hero {
@@ -180,7 +178,6 @@ main.wrapper {
   margin: auto;
 }
 
-
 .tabNav ul{
   display: flex;
   margin: auto;
@@ -200,7 +197,6 @@ main.wrapper {
   color: #CD5C5C;
   display: block;
 }
-
 
 .tabNav li + li {
   margin-left: 4px;
