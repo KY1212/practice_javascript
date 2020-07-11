@@ -1,5 +1,29 @@
 $(function () {
 
+  var duration = 800;
+
+  var menu = $(".menu");
+  var menuList = $(".menuList");
+  var close = $(".menuList>.menuHeading");
+
+  menu.click(function(){
+    menuList.toggleClass("open");
+    if(menuList.hasClass("open")){
+      menuList.stop(true).animate({
+        left: "0px"
+      },duration, "easeOutBounce");
+    }
+  });
+  close.click(function(){
+    menuList.toggleClass("open");
+    if(!menuList.hasClass("open")){
+    menuList.stop(true).animate({
+      left: "-375px"
+    },duration, "easeOutExpo");
+  }
+  });
+
+
   $(".wrapper").each(function (){
     //メインタブの処理
     var $tabNav = $(this).find(".tabNav"),
@@ -38,6 +62,7 @@ $(function () {
     });
   });
 
+  //jsonデータを入れるHTMLの生成
   $(document).ready(function () {
     $.getJSON("data/sample_data.json", function(data){
         for(var i in data){
@@ -58,7 +83,7 @@ $(function () {
     });
 });
 
-    //カレンダー
+    //カレンダー用の変数群
     var $window = $(window);
     var $year = $('#js-year');
     var $month = $('#js-month');
@@ -73,6 +98,7 @@ $(function () {
       calendarBody(currentYear, currentMonth, today);
     });
 
+    //カレンダー
     function calendarBody(year, month, today){
       var todayYMFlag = today.getFullYear() === year && today.getMonth() === month ? true : false; // 本日の年と月が表示されるカレンダーと同じか判定
       var startDate = new Date(year, month, 1); // その月の最初の日の情報
@@ -105,16 +131,14 @@ $(function () {
       }
       $tbody.html(tableBody);
 
+      //カレンダーの日付をクリック、その日付を持ったjsonデータのみ表示
       $("#js-calendar-body").on("click",function(event){
         $(".recruiting").show();
         $(document).ready(function () {
           $.getJSON("data/sample_data.json", function(data){
-            // $(this).css("cursor","pointer");
             console.log(getMonth + "月" + event.target.id + "日");
-            //data[i].date
             selectDate = `${year}/${getMonth}/${event.target.id}`;
             console.log(selectDate);
-            console.log(event.target.id);
             for(var i in data){
               if(selectDate!=data[i].date){
                 $(`.recruiting:nth(${i})`).hide();
@@ -131,5 +155,8 @@ $(function () {
       $year.text(year);
       $month.text(month + 1);
     }
+
+
+
 });
 

@@ -59,7 +59,7 @@ body {
 header {
   width: 100%;
   background-color: #D2B48C	;
-  
+  position: relative;
 }
 
 header .wrapper {
@@ -87,13 +87,19 @@ header .mypage {
   display: none;
 }
 
+header .menuList {
+  display: none;
+}
+
 /*1000px以下で適用*/
 @media (max-width: 1000px) {
 
   header .wrapper {
     justify-content: space-between;
+    width: 98%;
+    margin-left: 0;
   }
-  
+
   header ul {
     display: none;
   }
@@ -101,13 +107,52 @@ header .mypage {
   header .menu {
     display: block;
     width: 80px;
-
+    background-color: #333;
   }
-  header .fas {
+  
+  header .menu > .fas {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 25px;
+    color: #fff;
+  }
+
+  /* ハンバーガーメニュー内リスト */
+  header .menuList {
+    display: block;
+    width: 375px;
+    z-index: 9999;
+    position: fixed;
+    background-color: #333;
+    left: -375px;
+  }
+
+  header .menuHeading > .fas {
+    margin-left: 20px;
+  }
+
+  header .menuList ul {
+    display: block;
+  }
+
+  header .menuList li {
+    padding: 15px 0;
+    margin: 0;
+    text-align: center;
+    border: solid 1px #C0C0C0;
+  }
+
+  header .menuList p {
+    padding: 15px;
+    font-weight: bold;
+  }
+
+  header .menuList p,
+  header .menuList span,
+  header .menuList li a {
+    font-size: 24px;
+    color: #fff;
   }
 
   header .mypage {
@@ -119,6 +164,7 @@ header .mypage {
   }
 
 }
+
 
 /*heroイメージ*/
 .hero {
@@ -152,6 +198,7 @@ header .mypage {
   .hero .wrapper .largeTxt {
     font-size: 40px;
   }
+  
   .hero .wrapper .mediumTxt {
     font-size: 30px;
   }
@@ -373,4 +420,15 @@ td {
   cursor: pointer;
 }
 
+@media(max-width: 767px) {
+
+  .tabNav li {
+    height: 80px;
+  }
+
+  .tabNav li a {
+    padding: 20px;
+  }
+
+}
 
