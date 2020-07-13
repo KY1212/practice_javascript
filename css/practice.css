@@ -287,6 +287,9 @@ main .tab .joinTab a{
 main .genreNavSP {
   display: none;
 }
+main .calendarSP {
+  display: none;
+}
 
 /* タブ内タブ */
 main .genreNav ul {
@@ -432,6 +435,10 @@ td {
     display: none;
   }
 
+  .joinTab .calendar {
+    display: none;
+  }
+
   main .genreNavSP {
     display: block;
     border: solid 2px #D2B48C;
@@ -463,6 +470,27 @@ td {
     font-size: 24px;
     display: block;
   }
+
+  main .calendarSP{
+    display: block;
+    border: solid 2px #D2B48C;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  main .calendarSP .calendarTop{
+    color: #D2B48C;
+    font-size: 26px;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  main .calendarSP .calendarTop .fas{
+    margin-left: 10px;
+  }
+
+
 
   .tabNav li {
     height: 80px;

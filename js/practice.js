@@ -89,7 +89,8 @@ $(function () {
     var $window = $(window);
     var $year = $('#js-year');
     var $month = $('#js-month');
-    var $tbody = $('#js-calendar-body');
+    var $tbodySp = $('#js-calendar-body-sp');
+    var $tbodyPc = $('#js-calendar-body-pc');
 
     var today = new Date();
     var currentYear = today.getFullYear(),
@@ -131,12 +132,14 @@ $(function () {
         tr += '</tr>';
         tableBody += tr;
       }
-      $tbody.html(tableBody);
+      $tbodySp.html(tableBody);
+      $tbodyPc.html(tableBody);
+      
 
       var notFound = $("<p class=\"notFoundTxt\">見つかりませんでした。</p>")
 
       // //カレンダーの日付をクリック、その日付を持ったjsonデータのみ表示
-      $("#js-calendar-body").on("click",function(event){
+      $("#js-calendar-body-sp,#js-calendar-body-pc").on("click",function(event){
         $(".recruiting").show();
         $(document).ready(function () {
           $.getJSON("data/sample_data.json", function(data){
@@ -181,17 +184,31 @@ $(function () {
 
     //ドロップダウンリスト(ジャンルを選択)
     var genreNavSP = $(".genreNavSP p");
-    var icon = $(".genreNavSP .fas");
-    var rotate = 180;
+    var calendarSP = $(".calendarSP p");
+    var iconGenreNav = $(".genreNavSP .fas");
+    var iconCalendar = $(".calendarSP .fas");
+    var rotategenreTab = 180;
+    var rotatecalendarSP = 180;
 
     $(genreNavSP).click(function(){
-      console.log(rotate);
-      icon.css("transform",`rotate(${rotate}deg)`),
-      icon.css("transition","transform 0.5s");
+      console.log(rotategenreTab);
+      iconGenreNav.css("transform",`rotate(${rotategenreTab}deg)`),
+      iconGenreNav.css("transition","transform 0.5s");
       $(this).next().not(":animated").slideToggle();
-      rotate+=180;
-      if(rotate==180){
-        rotate=0;
+      rotategenreTab+=180;
+      if(rotategenreTab==180){
+        rotategenreTab=0;
+      }
+    });
+
+    $(calendarSP).click(function(){
+      console.log(rotatecalendarSP);
+      iconCalendar.css("transform",`rotate(${rotatecalendarSP}deg)`),
+      iconCalendar.css("transition","transform 0.5s");
+      $(this).next().not(":animated").slideToggle();
+      rotatecalendarSP+=180;
+      if(rotatecalendarSP==180){
+        rotatecalendarSP=0;
       }
     });
 
