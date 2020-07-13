@@ -55,6 +55,10 @@ body {
   background-color: #FAF0E6	;
 }
 
+.none {
+  display: none;
+}
+
 /*header*/
 header {
   width: 100%;
@@ -233,10 +237,10 @@ main.wrapper {
 .tabNav li {
   border-radius: 5px 5px 0 0;
   width: 400px;
-  height: 40px;
+  height: 50px;
   background-color: #fff;
   text-align: center;
-  line-height: 40px;
+  line-height: 50px;
   border: solid 1px #CD5C5C	;
 }
 
@@ -280,6 +284,10 @@ main .tab .joinTab a{
   color: #D2B48C;
 }
 
+main .genreNavSP {
+  display: none;
+}
+
 /* タブ内タブ */
 main .genreNav ul {
   width: 96%;
@@ -293,9 +301,6 @@ main .genreNav ul>li {
   border-bottom: none;
   width: 150px;
   text-align: center;
-}
-
-main .genreNav ul>li+li {
 }
 
 main .genreNav ul>li.active {
@@ -420,14 +425,48 @@ td {
   cursor: pointer;
 }
 
+
 @media(max-width: 767px) {
+
+  .joinTab>.genreNav {
+    display: none;
+  }
+
+  main .genreNavSP {
+    display: block;
+    border: solid 2px #D2B48C;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .genreNavSP p {
+    color: #D2B48C;
+    font-size: 26px;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  main .genreNavSP ul {
+    width: 60%;
+    margin: auto;
+  }
+
+  main .genreNavSP li {
+    text-align: center;
+    border-bottom: solid 1px #D2B48C;
+    padding: 20px 0;
+
+  }
+
+  main .genreNavSP a {
+    font-size: 24px;
+    display: block;
+  }
 
   .tabNav li {
     height: 80px;
-  }
-
-  .tabNav li a {
-    padding: 20px;
+    line-height: 80px;
   }
 
 }

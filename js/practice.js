@@ -1,5 +1,7 @@
 $(function () {
 
+
+  //ハンバーガーメニュー
   var duration = 800;
 
   var menu = $(".menu");
@@ -67,7 +69,7 @@ $(function () {
     $.getJSON("data/sample_data.json", function(data){
         for(var i in data){
           console.log(i);
-          var recruiting=$("<div class=\"recruiting\"></div>");
+          var recruiting = $("<div class=\"recruiting\"></div>");
 
           recruiting.append("<p class=\"station\">"+data[i].station+"</p>");
           recruiting.append("<p class=\"date\">"+data[i].date+"</p>");
@@ -131,7 +133,9 @@ $(function () {
       }
       $tbody.html(tableBody);
 
-      //カレンダーの日付をクリック、その日付を持ったjsonデータのみ表示
+      var notFound = $("<p class=\"notFoundTxt\">見つかりませんでした。</p>")
+
+      // //カレンダーの日付をクリック、その日付を持ったjsonデータのみ表示
       $("#js-calendar-body").on("click",function(event){
         $(".recruiting").show();
         $(document).ready(function () {
@@ -142,6 +146,7 @@ $(function () {
             for(var i in data){
               if(selectDate!=data[i].date){
                 $(`.recruiting:nth(${i})`).hide();
+                // $("recruitingWrap").append(notFound);
               }else{
                 continue;
               }
@@ -149,6 +154,23 @@ $(function () {
           });
         });
       });
+      //カレンダーの日付をクリック、その日付を持ったjsonデータのみ表示
+      // $("#js-calendar-body").on("click",function(event){
+      //   $(".recruiting").show();
+      //   $(document).ready(function () {
+      //     $.getJSON("data/sample_data.json", function(data){
+      //       console.log(getMonth + "月" + event.target.id + "日");
+      //       selectDate = `${year}/${getMonth}/${event.target.id}`;
+      //       console.log(selectDate);
+      //       var jsonData = data.filter(function(item, index){
+      //         if (item.date == selectDate) return true;
+              
+      //       });
+      //       console.log('日付',jsonData);
+      //     });
+      //   });
+      // });
+
     }
 
     function calendarHeading(year, month){
@@ -157,6 +179,21 @@ $(function () {
     }
 
 
+    //ドロップダウンリスト(ジャンルを選択)
+    var genreNavSP = $(".genreNavSP p");
+    var icon = $(".genreNavSP .fas");
+    var rotate = 180;
+
+    $(genreNavSP).click(function(){
+      console.log(rotate);
+      icon.css("transform",`rotate(${rotate}deg)`),
+      icon.css("transition","transform 0.5s");
+      $(this).next().not(":animated").slideToggle();
+      rotate+=180;
+      if(rotate==180){
+        rotate=0;
+      }
+    });
 
 });
 

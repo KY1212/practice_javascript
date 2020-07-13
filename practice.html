@@ -143,12 +143,39 @@
               <li><a href="#genreTab6">スペシャル</a></li>
             </ul>
           </div>
+          <div class="genreNavSP">
+            <p>ジャンルを選択 <i class="fas fa-angle-down fa-1x"></i></p>
+            <ul class="none">
+              <li class="active"><a href="#genreTab0" class="active">全てのジャンル</a></li>
+              <li><a href="#genreTab1">音楽</a></li>
+              <li><a href="#genreTab2">CM</a></li>
+              <li><a href="#genreTab3">スポーツ</a></li>
+              <li><a href="#genreTab4">新番組</a></li>
+              <li><a href="#genreTab5">バラエティ</a></li>
+              <li><a href="#genreTab6">スペシャル</a></li>
+            </ul>
+          </div>
           <div class="genreTabs">
             <section class="genreTab" id="genreTab0">
               <div class="wrapper">
                 <div class="recruitingWrap">
                 </div>
                 <div class="calendar">
+                  <p class="calendarTop">
+                    <span>日付を選択</span>
+                    <span>都合のいい日をクリックしてください</span>
+                  </p>
+                  <div class="date">
+                    <h2 class="calendar-title"><span id="js-year"></span>年 <span id="js-month"></span>月</h2>
+                    <table class="calendar-table">
+                      <thead>
+                        <tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>
+                      </thead>
+                      <tbody id="js-calendar-body"></tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="calendarSP">
                   <p class="calendarTop">
                     <span>日付を選択</span>
                     <span>都合のいい日をクリックしてください</span>
