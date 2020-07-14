@@ -32,6 +32,7 @@ $(function () {
     $tabAnchors = $tabNav.find("a"),
     $tabPanel = $(this).find(".tab"),
     $genreNav= $(this).find(".genreNav"),
+    $genreNavSP= $(this).find(".genreNavSP"),
     $genreTabAnchors = $genreNav.find("a"),
     $genreTabs = $(this).find(".genreTabs"),
     $genrePanel = $(this).find(".genreTab");
@@ -50,12 +51,25 @@ $(function () {
       $($this.attr("href")).show();
     });
 
-    //ジャンルのタブ
+    //ジャンルのタブ(PC)
     $genreNav.find("li").click(function(){
       event.preventDefault();
       var $this = $(this);
       $genreTabAnchors.removeClass("active");
       $(".genreNav li").removeClass("active");
+      if($this.hasClass("active")) {
+        return;
+      }
+      $this.addClass("active");
+      $genrePanel.hide();
+      $($this.find("a").attr("href")).show();
+    });
+    //ジャンルのタブ(SP)
+    $genreNavSP.find("li").click(function(){
+      event.preventDefault();
+      var $this = $(this);
+      $genreTabAnchors.removeClass("active");
+      $(".genreNavSP li").removeClass("active");
       if($this.hasClass("active")) {
         return;
       }
