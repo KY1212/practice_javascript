@@ -19,15 +19,15 @@ $(function () {
   close.click(function(){
     menuList.toggleClass("open");
     if(!menuList.hasClass("open")){
-    menuList.stop(true).animate({
-      left: "-375px"
-    },duration, "easeOutExpo");
-  }
+      menuList.stop(true).animate({
+        left: "-375px"
+      },duration, "easeOutExpo");
+    }
   });
 
 
   $(".wrapper").each(function (){
-    //メインタブの処理
+    //タブ用変数
     var $tabNav = $(this).find(".tabNav"),
     $tabAnchors = $tabNav.find("a"),
     $tabPanel = $(this).find(".tab"),
@@ -36,6 +36,7 @@ $(function () {
     $genreTabs = $(this).find(".genreTabs"),
     $genrePanel = $(this).find(".genreTab");
 
+    //メインタブ
     $tabNav.find("li a").click(function(){
       event.preventDefault();
       var $this = $(this);
