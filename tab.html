@@ -14,25 +14,24 @@
 </head>
 <body>
     <div class="tabWrap">
-      <div class="tabNav">
-        <ul>
-          <li><a href="#firstTab">tab1</a></li>
-          <li><a href="#secondTab">tab2</a></li>
-          <li><a href="#thirdTab">tab3</a></li>
-        </ul>
-      </div>
-      <div class="tabPanel">
-        <section class="tab" id="firstTab">
+      <ul class="tabs">
+        <li class="tab active">tab1</li>
+        <li class="tab">tab2</li>
+        <li class="tab">tab3</li>
+      </ul>
+      <div class="tabPanels">
+        <!-- タグはdivかul -->
+        <section class="tabPanel active">
           <p class="tabTxt">
             ここにtab1の内容が入ります
           </p>
         </section>
-        <section class="tab" id="secondTab">
+        <section class="tabPanel">
           <p class="tabTxt">
             ここにtab2の内容が入ります
           </p>
         </section>
-        <section class="tab" id="thirdTab">
+        <section class="tabPanel">
           <p class="tabTxt">
             ここにtab3の内容が入ります
           </p>

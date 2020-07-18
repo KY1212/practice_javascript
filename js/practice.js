@@ -25,6 +25,12 @@ $(function () {
     }
   });
 
+  //会員登録ボタンのアニメーション
+  var menu = $("header li");
+
+  // menu.click(function() {
+  //   $(this).addClass('change');
+  // });
 
   $(".wrapper").each(function (){
     //タブ用変数
